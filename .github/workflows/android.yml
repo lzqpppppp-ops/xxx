@@ -334,7 +334,7 @@ jobs:
           AA==
           JEV_B64
           base64 -d /tmp/jev-project.b64 > /tmp/jev-project.zip
-          unzip -q /tmp/jev-project.zip -d .
+          unzip -oq /tmp/jev-project.zip -d . -x README.md
       - name: Build debug APK
         run: gradle :app:assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
